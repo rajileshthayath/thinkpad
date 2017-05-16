@@ -1,4 +1,4 @@
-package com.example.sms;
+package com.payoff.sms;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
