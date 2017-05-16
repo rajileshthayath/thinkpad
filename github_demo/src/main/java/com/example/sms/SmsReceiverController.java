@@ -23,11 +23,12 @@ public class SmsReceiverController {
 			MediaType.APPLICATION_JSON_VALUE })
 	public MultiValueMap<String, String> sendSms(@RequestBody MultiValueMap<String, String> smsDetails) {
 		System.out.println(smsDetails.toString());
-		System.out.println(smsDetails.get("accountSid"));
-		System.out.println(smsDetails.get("from"));
-		System.out.println(smsDetails.get("to"));
-		System.out.println(smsDetails.get("body"));
-		System.out.println(smsDetails.get("messageSid"));
+		System.out.println(smsDetails.get("AccountSid"));
+		System.out.println(smsDetails.get("From"));
+		System.out.println(smsDetails.get("To"));
+		System.out.println(smsDetails.get("Body"));
+		System.out.println(smsDetails.get("MessageSid"));
+		System.out.println(smsDetails.get("FromCountry"));
 		return smsDetails;
 	}
 	
