@@ -1,37 +1,75 @@
 package com.example.sms;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
+@XmlRootElement(name = "response")
 public class Sms {
-	
-	private String msg;
-	private String transactionId;
+
+	private String accountSid;
+	private String from;
+	private String to;
+	private String body;
 	private long timeStamp = System.currentTimeMillis();
-
-	public Sms(){
+	private String messageSid;
 	
-	}
-	
-	public Sms(String msg, String transactionId) {
+	public Sms(String accountSid, String from, String to, String body, long timeStamp, String messageSid) {
 		super();
-		this.msg = msg;
-		this.transactionId = transactionId;
-	}
-	
-	public String getMsg() {
-		return msg;
-	}
-
-	public void setMsg(String msg) {
-		this.msg = msg;
+		this.accountSid = accountSid;
+		this.from = from;
+		this.to = to;
+		this.body = body;
+		this.timeStamp = timeStamp;
+		this.messageSid = messageSid;
 	}
 
-	public String getTransactionId() {
-		return transactionId;
+	public String getMessageSid() {
+		return messageSid;
 	}
 
-	public void setTransactionId(String transactionId) {
-		this.transactionId = transactionId;
+	public void setMessageSid(String msgeSid) {
+		messageSid = msgeSid;
 	}
-	
+
+	public String getAccountSid() {
+		return accountSid;
+	}
+
+	public void setAccountSid(String accSid) {
+		accountSid = accSid;
+	}
+
+	public String getFrom() {
+		return from;
+	}
+
+	public void setFrom(String fm) {
+		from = fm;
+	}
+
+	public String getTo() {
+		return to;
+	}
+
+	public void setTo(String toNum) {
+		to = toNum;
+	}
+
+	public String getBody() {
+		return body;
+	}
+
+	public void setBody(String msgBody) {
+		body = msgBody;
+	}
+
+	public Sms() {
+	}
+
 	public long getTimeStamp() {
 		return timeStamp;
 	}
@@ -42,7 +80,8 @@ public class Sms {
 
 	@Override
 	public String toString() {
-		return "Sms [msg=" + msg + ", transactionId=" + transactionId + ", timeStamp=" + timeStamp + "]";
+		return "Sms [accountSid=" + accountSid + ", from=" + from + ", to=" + to + ", body=" + body + ", timeStamp="
+				+ timeStamp + ", messageSid=" + messageSid + "]";
 	}
-	
+
 }
