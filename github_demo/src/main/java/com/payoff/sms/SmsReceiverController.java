@@ -8,8 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.payoff.sms.utils.SendSmsThread;
+
 @RestController
 public class SmsReceiverController {
+	private final String to = "+919082961192";
+	private final String to2 = "+919819069769";
+	private final String body = "Test message one. Tra-12345678";
 	
 	@RequestMapping(value = "/receivesms", method = RequestMethod.POST, consumes = { MediaType.APPLICATION_FORM_URLENCODED_VALUE,
 			MediaType.APPLICATION_JSON_VALUE })
@@ -21,6 +26,9 @@ public class SmsReceiverController {
 		System.out.println(smsDetails.getFirst("Body"));
 		System.out.println(smsDetails.getFirst("MessageSid"));
 		System.out.println(smsDetails.getFirst("FromCountry"));
+		
+		new SendSmsThread(to2, body).start();
+		
 		return HttpStatus.OK;
 	}
 	
