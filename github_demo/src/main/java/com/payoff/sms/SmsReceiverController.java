@@ -12,8 +12,8 @@ import com.payoff.sms.utils.SendSmsThread;
 
 @RestController
 public class SmsReceiverController {
-	private final String to = "+919082961192";
-	private final String to2 = "+919819069769";
+	private final String to = "";
+	private final String to2 = "";
 	private final String body = "Test message one. Tra-12345678";
 	
 	@RequestMapping(value = "/receivesms", method = RequestMethod.POST, consumes = { MediaType.APPLICATION_FORM_URLENCODED_VALUE,
