@@ -12,11 +12,11 @@ import com.twilio.sdk.resource.factory.MessageFactory;
 import com.twilio.sdk.resource.instance.Message;
 
 public class Twilio {
-	private final String Live_Auth_Token = "418831bd7e7374132aae0d153100f732";
-	private final String Live_Account_Sid = "AC7fb5a88c6c53b90532445f36bb72baa8";
+	private final String Live_Auth_Token = "";
+	private final String Live_Account_Sid = "";
 	
-	private final String Test_Account_Sid = "ACdc9f971fd8dbaf2e79565105e37c6975";
-	private final String Test_Auth_Token = "a235fb01c20635a42298caac462bda04";
+	private final String Test_Account_Sid = "";
+	private final String Test_Auth_Token = "";
 	private static Twilio sInstance;
 	private TwilioRestClient mClient;
 	
@@ -36,7 +36,7 @@ public class Twilio {
 		//mClient.getHttpClient().execute(arg0, arg1)
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 		   params.add(new BasicNameValuePair("To", to));
-		   params.add(new BasicNameValuePair("From", "+18583751782"));
+		   params.add(new BasicNameValuePair("From", ""));
 		   params.add(new BasicNameValuePair("Body", body));
 //		   params.add(new BasicNameValuePair("MediaUrl", "https://c1.staticflickr.com/3/2899/14341091933_1e92e62d12_b.jpg"));
 
